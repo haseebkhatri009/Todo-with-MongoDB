@@ -13,7 +13,7 @@ const todos = [];
 let idNum = 1;
 
 app.use(express.json());
-app.use(cors({ origin: ['http://localhost:5173', 'https://todo-frontend.surge.sh'] }))
+app.use(cors({ origin: ['http://localhost:5173', 'https://todo-frontend.surge.sh', 'https://todo-mongo.surge.sh'] }))
 
 
 app.get('/', (req, res) => {
@@ -110,7 +110,7 @@ app.get("/api/v1/todos", async (request, response) => {
 // naya todo bannae ko
 app.post("/api/v1/todo", async (request, response) => {
   const obj = {
-    todoContent: request.body.todo,
+    todo: request.body.todo,
     ip: request.ip,
   };
 
@@ -124,7 +124,7 @@ app.patch("/api/v1/todo/:id", async (request, response) => {
   const id = request.params.id;
 
   const result = await Todo.findByIdAndUpdate(id,
-    { todoContent: request.body.todoContent }
+    { todo: request.body.todo }
   )
 
   console.log('result=>', result);
