@@ -13,7 +13,7 @@ const todos = [];
 let idNum = 1;
 
 app.use(express.json());
-app.use(cors({ origin: ['http://localhost:5173', 'https://todo-frontend.surge.sh', 'http://todo-mongo.surge.sh'] }))
+app.use(cors({ origin: ['http://localhost:5173', 'https://todo-frontend.surge.sh', 'https://todo-mongo.surge.sh'] }))
 
 
 app.get('/', (req, res) => {
