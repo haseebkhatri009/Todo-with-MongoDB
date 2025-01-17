@@ -12,3 +12,13 @@ const todoSchema = new Schema(
 
 
 export const Todo = model("Todo", todoSchema);
+
+
+// import { Schema, model } from "mongoose";
+
+// const todoSchema = new Schema(
+//   {
+//     todoContent: { type: String, required: true },
+//     ip: { type: String,
+// }})
+// export const Todo = model("Todo", todoSchema);
